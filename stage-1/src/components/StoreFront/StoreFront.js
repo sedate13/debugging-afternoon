@@ -3,8 +3,8 @@ import axios from 'axios';
 import './StoreFront.css';
 
 class StoreFront extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             products: []
@@ -15,13 +15,16 @@ class StoreFront extends Component {
         axios.get("https://practiceapi.devmountain.com/products/")
             .then((response) => {
                 this.setState({
-                    products: response
+                    products: response.data
                 })
             })
     }
+    //^change to response.data because response alone returns an object and you cant .map through an object
 
     render() {
+        console.log(this.state.products);
         let productDisplay = this.state.products.map((element, index) => {
+            
             return (
                 <div className="product-container" key={index}>
                     <h2>{element.title}</h2>

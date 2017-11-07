@@ -8,7 +8,7 @@ import { Route, Switch } from 'react-router-dom';
 
 
 class App extends Component {
-  constructor() {
+  constructor(props) {
     super();
 
     this.state = {
@@ -21,9 +21,12 @@ class App extends Component {
 
   addToShoppingCart(product) {
     this.setState({
+
       shoppingCart: [...this.state.shoppingCart, product]
-    })
-    console.log(this.state.shoppingCart);
+    },
+  ()=>{ console.log(this.state.shoppingCart)}
+  )
+    ;
   }
 
   removeFromShoppingCart(product) {
