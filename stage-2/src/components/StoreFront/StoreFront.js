@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './StoreFront.css';
 
+
 class StoreFront extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             products: []
