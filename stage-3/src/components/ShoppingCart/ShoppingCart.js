@@ -3,6 +3,8 @@ import './ShoppingCart.css';
 import { removeFromShoppingCart } from '../../redux/reducer';
 import { connect } from 'react-redux';
 
+
+
 class ShoppingCart extends Component {
 
     render() {
@@ -33,7 +35,7 @@ class ShoppingCart extends Component {
 function mapStateToProps(state) {
     console.log(state);
     return {
-        shoppingCart: state.shoppingCart
+        shoppingCart: state.shoppingCart,
     };
 }
 
